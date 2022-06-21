@@ -4,6 +4,13 @@ Original revision: https://github.com/apache/commons-io/commit/9e2b2c09732ca5963
 
 Fixed revision: https://github.com/apache/commons-io/commit/c5f2e40e7a8234fe48e08d451d3152ba58a03ac6
 
+Refactoring Operation:
+
+   private DeferredFileOutputStream(final int threshold, final File outputFile, final String prefix,
+-                                     final String suffix, final File directory) {
++                                    final String suffix, final File directory, final int initialBufferSize) {
+
+Results:
 1. src/main/java/org/apache/commons/io/output/DeferredFileOutputStream.java#102
    - before
       - this(threshold, outputFile, null, null, null);
