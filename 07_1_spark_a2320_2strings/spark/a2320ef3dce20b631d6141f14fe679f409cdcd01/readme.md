@@ -4,9 +4,11 @@ Original revision: https://github.com/perwendel/spark/commit/5f767420ed43379d203
 
 Fixed revision: https://github.com/perwendel/spark/commit/a2320ef3dce20b631d6141f14fe679f409cdcd01
 
-Where added: src/main/java/spark/staticfiles/DirectoryTraversal.java#12
-
-What added: String localFolder
+Refactoring Operation:
+```
+- public static void protectAgainstInClassPath(String path) {
++ public static void protectAgainstInClassPath(String path, String localFolder) {
+```
 
 1. src/main/java/spark/resource/ClassPathResourceHandler.java#83
     - before

@@ -4,8 +4,32 @@ Original revision: https://github.com/adamfisk/LittleProxy/commit/dfdb3753689106
 
 Fixed revision: https://github.com/adamfisk/LittleProxy/commit/4ab98298795ea60bd58205d6551e63f7e14a4034
 
-Where added: src/main/java/org/littleshoot/proxy/impl/DefaultHttpProxyServer.java#607
-What added: boolean allowRequestToOriginServer
+Refactoring Operation:
+```
+private DefaultHttpProxyServerBootstrap(
+                ServerGroup serverGroup,
+                TransportProtocol transportProtocol,
+                InetSocketAddress requestedAddress,
+                SslEngineSource sslEngineSource,
+                boolean authenticateSslClients,
+                ProxyAuthenticator proxyAuthenticator,
+                ChainedProxyManager chainProxyManager,
+                MitmManager mitmManager,
+                HttpFiltersSource filtersSource,
+                boolean transparent, int idleConnectionTimeout,
+                Collection<ActivityTracker> activityTrackers,
+                int connectTimeout, HostResolver serverResolver,
+                long readThrottleBytesPerSecond,
+                long  writeThrottleBytesPerSecond,
+                InetSocketAddress localAddress,
+                String proxyAlias,
+                int maxInitialLineLength,
+                int maxHeaderSize,
+-               int maxChunkSize) {
++               int maxChunkSize,
++               boolean allowRequestToOriginServer) {
+```
+
 
 1. src/main/java/org/littleshoot/proxy/impl/DefaultHttpProxyServer.java#385
     - before

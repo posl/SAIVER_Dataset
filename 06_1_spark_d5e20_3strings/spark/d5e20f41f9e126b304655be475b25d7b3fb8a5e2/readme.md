@@ -4,9 +4,11 @@ Original revision: https://github.com/perwendel/spark/commit/99aaaed33ade23b4795
 
 Fixed revision: https://github.com/perwendel/spark/commit/d5e20f41f9e126b304655be475b25d7b3fb8a5e2
 
-Where added: src/main/java/spark/route/SimpleRouteMatcher.java#214
-
-What added: String acceptType
+Refactoring Operation:
+```
+- public void parseValidateAddRoute(String route, Object target) {
++ public void parseValidateAddRoute(String route, Object target, String acceptType) {
+```
 
 1. src/main/java/spark/Spark.java#285
     - before

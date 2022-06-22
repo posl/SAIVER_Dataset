@@ -4,6 +4,12 @@ Original revision: https://github.com/davidmoten/rxjava-jdbc/commit/36670ac159fa
 
 Fixed revision: https://github.com/davidmoten/rxjava-jdbc/commit/6457a45bf08a1eda4fb0da2c7bc79a7a29c4d3b5
 
+Refactoring Operation:
+```
+- static void setParameters(PreparedStatement ps, List<Parameter> params) throws SQLException {
++ static void setParameters(PreparedStatement ps, List<Parameter> params, boolean namesAllowed) throws SQLException {
+```
+
 1. src/main/java/com/github/davidmoten/rx/jdbc/QuerySelectOnSubscribe.java#108
     - before
        - Util.setParameters(state.ps, parameters);

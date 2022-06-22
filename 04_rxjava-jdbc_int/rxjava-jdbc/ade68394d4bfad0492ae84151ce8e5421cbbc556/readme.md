@@ -4,6 +4,12 @@ Original revision: https://github.com/davidmoten/rxjava-jdbc/commit/2014f620b855
 
 Fixed revision: https://github.com/davidmoten/rxjava-jdbc/commit/ade68394d4bfad0492ae84151ce8e5421cbbc556
 
+Refactoring Operation:
+```
+- public QueryContext(Database db, int batchSize) {
++ public QueryContext(Database db, int batchSize, int fetchSize) {
+```
+
 1. src/main/java/com/github/davidmoten/rx/jdbc/QueryContext.java#19
     - before
        - this(db, 1);
